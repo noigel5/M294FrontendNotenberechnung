@@ -1,0 +1,23 @@
+table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.edit {
+  margin-right: 1rem;
+  margin-top: -1rem;
+}
+
+.actions {
+  padding-top: 1rem;
+}
+
+.mat-column-actions {
+  word-break: break-word;
+  width: 10rem !important;
+}
+
+.mat-column-id {
+  word-break: break-word;
+  width: 6rem !important;
+}
