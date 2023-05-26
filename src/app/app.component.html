@@ -1,13 +1,29 @@
 <body>
   <header>
     <mat-toolbar color="primary">
+      <button mat-icon-button (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
       <span>Notenberechnung</span>
     </mat-toolbar>
   </header>
   <main>
-    <app-semester></app-semester>
+    <mat-drawer-container>
+      <mat-drawer #drawer class="demoapp-sidenav" mode="side">
+        <div>
+          <button [routerLink]="['Semester']" color="primary" mat-button>Grades</button>
+        </div>
+        <div>
+          <button [routerLink]="['Calculator']" color="primary" mat-button>Calculator</button>
+        </div>
+        <br>
+        <app-login></app-login>
+
+      </mat-drawer>
+
+      <div class="demoapp-sidenav-content">
+        <app-semester></app-semester>
+      </div>
+    </mat-drawer-container>
   </main>
-  <footer>
-    <mat-toolbar color="primary"></mat-toolbar>
-  </footer>
 </body>

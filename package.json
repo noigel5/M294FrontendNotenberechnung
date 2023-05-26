@@ -37,6 +37,8 @@
     "@types/jasmine": "~4.3.0",
     "@typescript-eslint/eslint-plugin": "5.48.2",
     "@typescript-eslint/parser": "5.48.2",
+    "@auth0/angular-jwt": "^5.1.1",
+    "angular-oauth2-oidc": "^15.0.1",
     "eslint": "^8.33.0",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",

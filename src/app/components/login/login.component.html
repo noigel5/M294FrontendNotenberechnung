@@ -1,0 +1,8 @@
+<div *ngIf="!oauthService.hasValidAccessToken()">
+  <button mat-button color="warn" (click)="login()">Login</button>
+</div>
+
+<div *ngIf="oauthService.hasValidAccessToken()">
+  <button mat-button color="warn" (click)="logout()">Logout</button>
+</div>
+
