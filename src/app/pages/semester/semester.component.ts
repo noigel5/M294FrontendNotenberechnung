@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { Semester } from 'src/app/dataaccess/Semester';
 import { SemesterService } from 'src/app/service/semester.service';
 
@@ -11,9 +12,9 @@ import { SemesterService } from 'src/app/service/semester.service';
 
 export class SemesterComponent {
   SemesterDataSource = new MatTableDataSource<Semester>();
-  displayedColumns: string[] = ['id', 'name', 'actions'];
+  displayedColumns: string[] = ['name', 'actions'];
 
-  constructor(private semesterService: SemesterService) {}
+  constructor(private semesterService: SemesterService, private router: Router) {}
 
   async ngOnInit() {
     await this.reloadData();

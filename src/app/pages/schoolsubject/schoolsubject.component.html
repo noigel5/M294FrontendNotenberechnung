@@ -1,0 +1,34 @@
+<button mat-raised-button color="primary">
+  <mat-icon>add</mat-icon>add new School Subject
+</button>
+
+<table mat-table [dataSource]="SchoolSubjectDataSource">
+  <!-- Subject Column -->
+  <ng-container matColumnDef="subject">
+    <th mat-header-cell *matHeaderCellDef> Subject </th>
+    <td mat-cell *matCellDef="let element"><mat-accordion>
+      <mat-expansion-panel >
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{element.subject}}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-grade></app-grade>
+      </mat-expansion-panel>
+    </mat-accordion></td>
+  </ng-container>
+
+  <!-- Actions Column -->
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef> Actions </th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-raised-button color="primary" class="edit">Edit</button>
+      <button mat-mini-fab color="warn">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

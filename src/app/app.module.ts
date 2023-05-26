@@ -22,6 +22,9 @@ import { CalculatorComponent } from './pages/calculator/calculator.component';
 import { LoginComponent } from './components/login/login.component';
 import { IsInRoleDirective } from './dir/is.in.role.dir';
 import { IsInRolesDirective } from './dir/is.in.roles.dir';
+import { SchoolsubjectComponent } from './pages/schoolsubject/schoolsubject.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { GradeComponent } from './pages/grade/grade.component';
 
 export const authConfig: AuthConfig = {
   issuer: 'http://localhost:8080/realms/notenberechnung',
@@ -49,7 +52,9 @@ export function storageFactory(): OAuthStorage {
     CalculatorComponent,
     LoginComponent,
     IsInRoleDirective,
-    IsInRolesDirective
+    IsInRolesDirective,
+    SchoolsubjectComponent,
+    GradeComponent
   ],
   imports: [
     BrowserModule,
@@ -66,7 +71,8 @@ export function storageFactory(): OAuthStorage {
       cookieName: 'XSRF-TOKEN',
       headerName: 'X-XSRF-TOKEN'
     }),
-    MatSidenavModule
+    MatSidenavModule,
+    MatExpansionModule
   ],
   providers: [
     {provide: AuthConfig, useValue: authConfig},
