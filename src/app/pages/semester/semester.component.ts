@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+import { Semester } from 'src/app/dataaccess/Semester';
+import { SemesterService } from 'src/app/service/semester.service';
 
 @Component({
   selector: 'app-semester',
@@ -7,15 +10,18 @@ import { Component } from '@angular/core';
 })
 
 export class SemesterComponent {
+  SemesterDataSource = new MatTableDataSource<Semester>();
   displayedColumns: string[] = ['id', 'name', 'actions'];
-  dataSource = ELEMENT_DATA;
-}
 
-export interface PeriodicElement {
-  id: number;
-  name: string;
-}
+  constructor(private semesterService: SemesterService) {}
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  {id: 1, name: 'Semester 1'}
-];
+  async ngOnInit() {
+    await this.reloadData();
+  }
+
+  reloadData() {
+    this.semesterService.getList().subscribe(obj => {
+      this.SemesterDataSource.data = obj;
+    });
+  }
+}
