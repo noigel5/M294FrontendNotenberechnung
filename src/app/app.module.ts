@@ -20,13 +20,15 @@ import { AppAuthService } from './service/app.auth.service';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { CalculatorComponent } from './pages/calculator/calculator.component';
 import { LoginComponent } from './components/login/login.component';
+import { IsInRoleDirective } from './dir/is.in.role.dir';
+import { IsInRolesDirective } from './dir/is.in.roles.dir';
 
 export const authConfig: AuthConfig = {
-  issuer: 'http://localhost:8080/realms/ILV',
+  issuer: 'http://localhost:8080/realms/notenberechnung',
   requireHttps: false,
   redirectUri: environment.frontendBaseUrl,
   postLogoutRedirectUri: environment.frontendBaseUrl,
-  clientId: 'demoapp',
+  clientId: 'notenberechnung',
   scope: 'openid profile roles offline_access',
   responseType: 'code',
   showDebugInformation: true,
@@ -45,7 +47,9 @@ export function storageFactory(): OAuthStorage {
     AppComponent,
     SemesterComponent,
     CalculatorComponent,
-    LoginComponent
+    LoginComponent,
+    IsInRoleDirective,
+    IsInRolesDirective
   ],
   imports: [
     BrowserModule,
