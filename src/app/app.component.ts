@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { OAuthService } from 'angular-oauth2-oidc';
 
 @Component({
   selector: 'app-root',
@@ -6,4 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent {}
+export class AppComponent {
+  constructor(public oauthService: OAuthService) {
+
+  }
+}

@@ -8,21 +8,22 @@
     </mat-toolbar>
   </header>
   <main>
-    <mat-drawer-container>
-      <mat-drawer #drawer class="demoapp-sidenav" mode="side">
+    <mat-drawer-container class="sidenav-container">
+      <mat-drawer #drawer class="sidenav" mode="side">
         <div>
-          <button [routerLink]="['Semester']" color="primary" mat-button>Grades</button>
+          <button [routerLink]="['semester']" color="primary" mat-button>Grades</button>
         </div>
         <div>
-          <button [routerLink]="['Calculator']" color="primary" mat-button>Calculator</button>
+          <button [routerLink]="['calculator']" color="primary" mat-button>Calculator</button>
         </div>
         <br>
         <app-login></app-login>
 
       </mat-drawer>
 
-      <div class="demoapp-sidenav-content">
-        <app-semester></app-semester>
+      <div class="sidenav-content">
+        <h1 *ngIf="!oauthService.hasValidAccessToken()">Willkommen</h1>
+        <router-outlet></router-outlet>
       </div>
     </mat-drawer-container>
   </main>
