@@ -25,6 +25,15 @@ import { IsInRolesDirective } from './dir/is.in.roles.dir';
 import { SchoolsubjectComponent } from './pages/schoolsubject/schoolsubject.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { GradeComponent } from './pages/grade/grade.component';
+import { SemesterDetailComponent } from './pages/semester-detail/semester-detail.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
+import {MatInputModule} from "@angular/material/input";
+import { SchoolsubjectDetailComponent } from './pages/schoolsubject-detail/schoolsubject-detail.component';
+
 
 export const authConfig: AuthConfig = {
   issuer: 'http://localhost:8080/realms/notenberechnung',
@@ -54,7 +63,10 @@ export function storageFactory(): OAuthStorage {
     IsInRoleDirective,
     IsInRolesDirective,
     SchoolsubjectComponent,
-    GradeComponent
+    GradeComponent,
+    SemesterDetailComponent,
+    ConfirmDialogComponent,
+    SchoolsubjectDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -72,7 +84,13 @@ export function storageFactory(): OAuthStorage {
       headerName: 'X-XSRF-TOKEN'
     }),
     MatSidenavModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatSnackBarModule,
+    MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatDialogModule,
+    MatInputModule
   ],
   providers: [
     {provide: AuthConfig, useValue: authConfig},

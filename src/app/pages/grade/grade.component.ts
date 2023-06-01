@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { Grade } from 'src/app/dataaccess/Grade';
@@ -9,7 +9,7 @@ import { GradeService } from 'src/app/service/grade.service';
   templateUrl: './grade.component.html',
   styleUrls: ['./grade.component.scss']
 })
-export class GradeComponent {
+export class GradeComponent implements OnInit{
   GradeDataSource = new MatTableDataSource<Grade>();
   displayedColumns: string[] = ['description', 'grade', 'actions'];
 
