@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { Grade } from 'src/app/dataaccess/Grade';
@@ -13,6 +13,9 @@ export class GradeComponent {
   GradeDataSource = new MatTableDataSource<Grade>();
   displayedColumns: string[] = ['description', 'grade', 'actions'];
 
+  @Input()
+  schoolSubjectId!: number;
+
   constructor(private gradeService: GradeService, private router: Router) {}
 
   async ngOnInit() {
@@ -20,7 +23,7 @@ export class GradeComponent {
   }
 
   reloadData() {
-    this.gradeService.getList().subscribe(obj => {
+    this.gradeService.getList(this.schoolSubjectId).subscribe(obj => {
       this.GradeDataSource.data = obj;
     });
   }

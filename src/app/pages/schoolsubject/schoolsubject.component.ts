@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { SchoolSubject } from 'src/app/dataaccess/SchoolSubject';
@@ -13,6 +13,9 @@ export class SchoolsubjectComponent {
   SchoolSubjectDataSource = new MatTableDataSource<SchoolSubject>();
   displayedColumns: string[] = ['subject', 'actions'];
 
+  @Input()
+  semesterId!: number;
+
   constructor(private schoolSubjectService: SchoolsubjectService, private router: Router) {}
 
   async ngOnInit() {
@@ -20,7 +23,7 @@ export class SchoolsubjectComponent {
   }
 
   reloadData() {
-    this.schoolSubjectService.getList().subscribe(obj => {
+    this.schoolSubjectService.getList(this.semesterId).subscribe(obj => {
       this.SchoolSubjectDataSource.data = obj;
     });
   }

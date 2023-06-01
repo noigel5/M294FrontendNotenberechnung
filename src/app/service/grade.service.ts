@@ -9,11 +9,11 @@ import { environment } from 'src/environments/environment';
 })
 export class GradeService {
 
-  readonly backendUrl = '/grade';
+  readonly backendUrl = '/gradebyschoolsubjectid';
 
   constructor(private http: HttpClient) {}
 
-  public getList(): Observable<Grade[]> {
-    return this.http.get<Grade[]>(environment.backendBaseUrl + this.backendUrl);
+  public getList(id: number): Observable<Grade[]> {
+    return this.http.get<Grade[]>(environment.backendBaseUrl + this.backendUrl + `/${id}`);
   }
 }
