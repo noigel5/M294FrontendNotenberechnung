@@ -28,7 +28,7 @@ import { GradeComponent } from './pages/grade/grade.component';
 import { SemesterDetailComponent } from './pages/semester-detail/semester-detail.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatInputModule} from "@angular/material/input";
