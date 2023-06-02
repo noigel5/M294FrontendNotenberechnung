@@ -33,6 +33,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatInputModule} from "@angular/material/input";
 import { SchoolsubjectDetailComponent } from './pages/schoolsubject-detail/schoolsubject-detail.component';
+import { GradeDetailComponent } from './pages/grade-detail/grade-detail.component';
 
 
 export const authConfig: AuthConfig = {
@@ -66,7 +67,8 @@ export function storageFactory(): OAuthStorage {
     GradeComponent,
     SemesterDetailComponent,
     ConfirmDialogComponent,
-    SchoolsubjectDetailComponent
+    SchoolsubjectDetailComponent,
+    GradeDetailComponent
   ],
   imports: [
     BrowserModule,

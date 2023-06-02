@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -10,7 +10,7 @@ import { SchoolsubjectService } from 'src/app/service/schoolsubject.service';
   templateUrl: './schoolsubject-detail.component.html',
   styleUrls: ['./schoolsubject-detail.component.scss']
 })
-export class SchoolsubjectDetailComponent {
+export class SchoolsubjectDetailComponent implements OnInit{
   schoolSubject = new SchoolSubject();
   public objForm = new UntypedFormGroup({
     subject: new UntypedFormControl('')

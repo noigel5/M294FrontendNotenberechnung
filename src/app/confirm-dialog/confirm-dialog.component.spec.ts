@@ -2,8 +2,6 @@ import {ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {ConfirmDialogComponent} from './confirm-dialog.component';
 import {MAT_DIALOG_DATA, MatDialogModule, MatDialogRef} from '@angular/material/dialog';
-import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
-import {HttpLoaderFactory} from '../../app.module';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 describe('ConfirmDialogComponent', () => {
@@ -14,13 +12,6 @@ describe('ConfirmDialogComponent', () => {
     await TestBed.configureTestingModule({
       imports: [
         MatDialogModule,
-        TranslateModule.forRoot({
-          loader: {
-            provide: TranslateLoader,
-            useFactory: HttpLoaderFactory,
-            deps: [HttpClient]
-          }
-        }),
         HttpClientModule
       ],
       providers: [

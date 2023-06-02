@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatTableDataSource } from '@angular/material/table';
@@ -13,7 +13,7 @@ import { SemesterService } from 'src/app/service/semester.service';
   styleUrls: ['./semester.component.scss']
 })
 
-export class SemesterComponent {
+export class SemesterComponent implements OnInit {
   SemesterDataSource = new MatTableDataSource<Semester>();
   displayedColumns: string[] = ['name', 'actions'];
 
